@@ -1,0 +1,34 @@
+{% load staticfiles %}
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Weather Station</title>
+        <meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+        <link rel="stylesheet" href="{% static "assets/css/main.css" %}" />
+        <noscript><link rel="stylesheet" href="{% static "assets/css/noscript.css" %}" /></noscript>
+    </head>
+    <body>
+        <section id="header" class="dark">
+            <header>
+                <h1>Weather Station <img src="{{data.icon_url}}"></img> </h1>
+            </header>
+            <footer>
+                <ul>
+                    <li>Location - {{data.location}}</li>
+                    <li>Currently - {{data.weather}}</li>
+                    <li>Wind - {{data.wind_str}}</li>
+                    <li>Temp - {{data.temp}} f</li>
+                    <li>Humidity - {{data.humidity}}</li>
+                    <li>Preciptation - {{data.precip}}</li>
+                    <li>{{data.observation_time}}</li>
+                </ul>
+            </footer>
+        </section>
+        <!-- Scripts -->
+			<script src="{% static "assets/js/jquery.min.js" %}"></script>
+			<script src="{% static "assets/js/browser.min.js" %}"></script>
+			<script src="{% static "assets/js/breakpoints.min.js" %}"></script>
+			<script src="{% static "assets/js/main.js" %}"></script>
+    </body>
+</html>
